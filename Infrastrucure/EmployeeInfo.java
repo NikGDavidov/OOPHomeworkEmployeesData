@@ -3,7 +3,7 @@ package Employees.Infrastrucure;
 
 import Employees.Models.Department;
 import Employees.Models.Employee;
-
+import Employees.Models.MyCompanyEmployee;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,7 +26,7 @@ public class EmployeeInfo {
 
     public void add() {
         Scanner sc1 = new Scanner(System.in);
-        Employee employee = new Employee();
+        Employee employee = new MyCompanyEmployee();
         System.out.println("Введите имя сотрудника");
         employee.setName(sc1.nextLine());
         System.out.println("Введите фамилию сотрудника");
@@ -82,7 +82,10 @@ public class EmployeeInfo {
     public void remove(int id) {
         ArrayList<Employee> em = (ArrayList) Load.read();
         for (int i = 0; i < em.size(); i++) {
-            if (em.get(i).getId() == id) em.remove(i);
+            if (em.get(i).getId() == id)
+            {em.remove(i);
+                System.out.println("Запись удалена");
+            }
         }
         File file = new File(pathDb);
         PrintWriter writer = null;

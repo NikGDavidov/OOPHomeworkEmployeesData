@@ -2,6 +2,7 @@ package Employees.Infrastrucure;
 
 import Employees.Models.Department;
 import Employees.Models.Employee;
+import Employees.Models.MyCompanyEmployee;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,7 +29,7 @@ public class Load {
         for (int i =0; i<records.size(); i++){
             String s = records.get(i).toString();
             String emField [] = s.split(", ");
-            Employee e = new Employee();
+            Employee e = new MyCompanyEmployee();
             e.setId(Integer.parseInt(emField[0].replace("[","")));
             e.setName(emField[1]);
             e.setSurname(emField[2]);

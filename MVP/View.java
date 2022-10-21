@@ -8,4 +8,5 @@ import java.util.Comparator;
 public interface View {
     public void print(Collection<Employee> employees);
     public void sortPrint(Collection<Employee> employees, Comparator<Employee> comparator);
+    public String getValue(String title);
 }

@@ -6,10 +6,14 @@ import Employees.Models.Employee;
 import java.util.*;
 
 public class ConsoleView implements View {
+    Scanner vs = new Scanner(System.in);
     public void print(Collection<Employee> em) {
-        TreeSet<Employee> te = new TreeSet<>(em);
-        for (Employee el : te) {
-            System.out.println(el);
+        if (em.isEmpty() ) System.out.println("В этом кабинете нет сотрудников");
+       else {
+            TreeSet<Employee> te = new TreeSet<>(em);
+            for (Employee el : te) {
+                System.out.println(el);
+            }
         }
 
     }
@@ -19,6 +23,10 @@ public class ConsoleView implements View {
         for (Employee el : te) {
             System.out.println(el);
         }
+    }
+    public String getValue (String title){
+        System.out.printf("%s - ", title);
+       return vs.nextLine();
     }
 }
 
